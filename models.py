@@ -28,9 +28,9 @@ class Messages(db.Model):
     time = db.Column(db.DateTime())
     
 
-    def __init__(self, name, phone_no, time):
+    def __init__(self, name, message, time):
         self.name = name
-        self.phone_no = phone_no
+        self.message = message
         self.time = time
 
         

@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+{% block head %}
+
+{{ super() }}
+
+
+{% endblock %}
+{% block content %}
+<p>{{ contact_name}}</p> <p>{{ contact_no}}</p> 
+<a href="{{url_for('send_message')}}"><button type="button" class="btn btn-primary">Send Message</button></a>
+{% endblock%}
