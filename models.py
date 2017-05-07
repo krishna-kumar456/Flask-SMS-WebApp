@@ -2,12 +2,14 @@ from app import db
 from sqlalchemy.dialects.postgresql import JSON
 
 
+
 class Contacts(db.Model):
     __tablename__ = 'contacts'
+    
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String())
-    phone_no = db.Column(db.String())
+    phone_no = db.Column(db.String(),unique = True)
     
 
     def __init__(self, name, phone_no):

@@ -34,13 +34,16 @@
 
 {% endblock %}
 
+
 {% block content %}
 <p>ON MESSAGES PAGE</p>
+
 <ul>
-<li><a href="">Message 1</a></li>
-<li><a href="">Message 2</a></li>
-<li><a href="">Message 3</a></li>
+{% for message in message_list %}
+<li>{{ message.name}} {{ message.time }} {{message.message}}</li>
+{% endfor %}
 </ul>
+
 
 {% endblock %}
 
