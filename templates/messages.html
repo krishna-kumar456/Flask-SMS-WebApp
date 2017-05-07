@@ -9,22 +9,28 @@
 <div class="jumbotron">
 	<div class="row">
 		<div class="col-md-4 col-md-offset-5">
-			<p>Contact's App</p>
+			<h2>Contact's App</h2>
 		</div>
 	</div>
+	<br><br>
 	<div class="row">
 
 		<ul class="nav nav-tabs">
-			<div class="col-md-4 col-md-offset-3">
-				{% block highlightcontacts%}
-				<li role="presentation" class="active"><a href="{{url_for('contacts_page')}}">Contacts</a></li>
-				{% endblock %}
-			</div>
-			<div class="col-md-4">
-				{% block highlightmessages%}
-				<li role="presentation"><a href="{{url_for('messages_page')}}">Messages</a></li>
-				{% endblock %}
-			</div>
+			<div class="col-md-4 col-md-offset-2">
+					
+					<li role="presentation"><a href="{{url_for('home_page')}}">Home</a></li>
+					
+				</div>
+				<div class="col-md-3">
+					{% block highlightcontacts%}
+					<li role="presentation"><a href="{{url_for('contacts_page')}}">Contacts</a></li>
+					{% endblock %}
+				</div>
+				<div class="col-md-3">
+					{% block highlightmessages%}
+					<li role="presentation"><a href="{{url_for('messages_page')}}">Messages</a></li>
+					{% endblock %}
+				</div>
 
 		</ul>
 	</div>
@@ -36,17 +42,36 @@
 
 
 {% block content %}
-<p>ON MESSAGES PAGE</p>
 
-<ul>
-{% for message in message_list %}
-<li>{{ message.name}} {{ message.time }} {{message.message}}</li>
-{% endfor %}
-</ul>
 
+	<!-- <ul>
+		{% for message in message_list %}
+		<li>{{ message.name}} {{ message.time }} {{message.message}}</li>
+		{% endfor %}
+	</ul>
+-->
+<div class="col-md-6 col-md-offset-3">
+
+	<table class="table table-hover table-bordered">
+		<thead>
+			<tr>
+				<th>Contact Name</th>
+				<th>Timestamp</th>
+				<th>Message</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for message in message_list %}
+			<tr>
+				<td>{{ message.name}}</td>
+				<td>{{ message.time }}</td>
+				<td>{{message.message}}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
 
 {% endblock %}
-
-{% block footer %}
-{{ super() }}
+{% block image %}
 {% endblock %}

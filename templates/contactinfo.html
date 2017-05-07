@@ -6,6 +6,20 @@
 
 {% endblock %}
 {% block content %}
-<p>{{ contact_name}}</p> <p>{{ contact_no}}</p> 
-<a href="{{url_for('send_message')}}"><button type="button" class="btn btn-primary">Send Message</button></a>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="col-md-4">
+			<h3>{{ contact_name}}</h3>
+		</div>
+		<div class="col-md-4">
+			<h3>{{ contact_no}}</h3>
+		</div> 
+		<div class="col-md-4">
+		<a href="{{url_for('send_message')}}"><button type="button" class="btn btn-block btn-lg btn-primary">Send Message</button></a>
+		</div>
+	</div>
+</div>
 {% endblock%}
+
+{% block image %}
+{% endblock %}

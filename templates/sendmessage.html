@@ -6,9 +6,16 @@
 
 {% endblock %}
 {% block content %}
-<div class="input-group">
-<span class="input-group-addon" id="basic-addon1">OTP</span>
-	<input type="text" disabled class="form-control" placeholder="{{ smstext }}" aria-describedby="basic-addon1">
-</div> 
-<a href="{{url_for('messages_page')}}"><button type="button" class="btn btn-primary">Send</button></a>
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+		<div class="input-group">
+			<span class="input-group-addon" id="basic-addon1">OTP</span>
+			<input type="text" disabled class="form-control" placeholder="{{ smstext }}" aria-describedby="basic-addon1">
+		</div> 
+		<a href="{{url_for('messages_page')}}"><button type="button" class="btn btn-primary">Send</button></a>
+	</div>
+</div>
 {% endblock%}
+
+{% block image %}
+{% endblock %}
