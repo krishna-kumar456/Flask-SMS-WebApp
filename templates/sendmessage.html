@@ -11,8 +11,13 @@
 		<div class="input-group">
 			<span class="input-group-addon" id="basic-addon1">OTP</span>
 			<input type="text" disabled class="form-control" placeholder="{{ smstext }}" aria-describedby="basic-addon1">
+			<span class="input-group-btn">
+				<a href="{{url_for('messages_page')}}">
+					<button class="btn btn-primary" type="button">Send</button>
+				</a>
+			</span>
 		</div> 
-		<a href="{{url_for('messages_page')}}"><button type="button" class="btn btn-primary">Send</button></a>
+		
 	</div>
 </div>
 {% endblock%}
